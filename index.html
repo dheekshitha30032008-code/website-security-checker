@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Security Checker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <footer>
+    Website Security Checker | Basic Security Header Analysis
+</footer>
+
+        <h1>🛡️ Website Security Checker</h1>
+
+<p class="tagline">
+    Check the basic security of any website in seconds.
+</p>
+        <p class="description">
+    A simple tool to check basic security configurations of a website.
+</p>
+
+        
+
+        <form method="POST" action="/check">
+
+            <input
+                type="text"
+                name="url"
+                placeholder="Enter website URL"
+                required
+            >
+
+            <button type="submit">
+                Check Security
+            </button>
+
+        </form>
+<div class="how-it-works">
+    <h3>How It Works</h3>
+
+    <p>1️⃣ Enter a website URL</p>
+    <p>2️⃣ Our tool checks its security headers</p>
+    <p>3️⃣ View the security score and results</p>
+</div>
+        <div class="info">
+    <h3>What We Check</h3>
+
+    <p>🔒 HTTPS</p>
+    <p>🛡️ HSTS</p>
+    <p>🔐 Content Security Policy (CSP)</p>
+    <p>🖼️ X-Frame-Options</p>
+    <p>📄 X-Content-Type-Options</p>
+</div>
+
+    </div>
+
+</body>
+</html>

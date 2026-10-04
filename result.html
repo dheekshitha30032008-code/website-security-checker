@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Results</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🛡️ Security Check Results</h1>
+
+        <h2>Security Score: {{ score }} / 5</h2>
+
+        {% if score == 5 %}
+            <p class="score-good">🟢 Excellent Security</p>
+        {% elif score == 4 %}
+            <p class="score-good">🟢 Good Security</p>
+        {% elif score >= 2 %}
+            <p class="score-medium">🟡 Moderate Security</p>
+        {% else %}
+            <p class="score-low">🔴 Needs Improvement</p>
+        {% endif %}
+
+        <p class="website">
+            Website:
+            <strong>{{ url }}</strong>
+        </p>
+
+        <h3>Security Checks</h3>
+
+        <div class="results">
+
+            {% for name, status in security_headers.items() %}
+
+                {% if status %}
+                    <div class="result success">
+                        <span>✅</span>
+                        <strong>{{ name }}</strong>
+                        <span>Found</span>
+                    </div>
+                {% else %}
+                    <div class="result danger">
+                        <span>❌</span>
+                        <strong>{{ name }}</strong>
+                        <span>Not Found</span>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <p class="warning">
+            ⚠️ This tool checks basic security headers only. It is not a complete vulnerability scanner.
+        </p>
+
+        <a href="/" class="back-button">
+            Check Another Website
+        </a>
+
+    </div>
+
+</body>
+</html>
