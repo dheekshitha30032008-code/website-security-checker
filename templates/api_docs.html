@@ -1,12 +1,14 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>API Documentation</title>
+
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
 <div class="container">
 
     <h1>🔌 API Documentation</h1>
@@ -20,15 +22,21 @@
     </p>
 
     <div class="api-box">
+
         <p><strong>Endpoint:</strong></p>
+
         <code>POST /api/check</code>
 
+
         <p><strong>Request JSON:</strong></p>
+
         <pre>{
     "url": "https://example.com"
 }</pre>
 
-        <p><strong>Successful response:</strong></p>
+
+        <p><strong>Successful Response:</strong></p>
+
         <pre>{
     "success": true,
     "url": "https://example.com",
@@ -45,25 +53,37 @@
     "scanned_at": "2026-10-05T12:00:00"
 }</pre>
 
+
         <p><strong>How to use it:</strong></p>
+
         <p>
             Send a POST request to
-            <code>/api/check</code> with a JSON body
-            containing a public website URL.
+            <code>/api/check</code>
+            with a JSON body containing a public website URL.
         </p>
+
     </div>
+
 
     <p class="warning">
         This tool checks basic HTTP security headers only.
         It is not a complete vulnerability scanner.
     </p>
 
+
     <div class="navigation">
-        <a href="/">🏠 Home</a>
-        <a href="/dashboard">📊 Dashboard</a>
+
+        <a href="/">
+            🏠 Home
+        </a>
+
+        <a href="/dashboard">
+            📊 Dashboard
+        </a>
+
     </div>
 
 </div>
+
 </body>
 </html>
-```
